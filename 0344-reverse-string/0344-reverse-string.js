@@ -5,5 +5,5 @@
 var s = ["h","e","l","l","o"];
 
 function reverseString(s){
-    s.reverse()  
+     return s.reverse()  
 }
