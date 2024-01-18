@@ -4,9 +4,9 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    let map = {};
+    let obj = {};
     for(let i=0;i<nums.length;i++){
-        if(map[target-nums[i]]>=0) return [ i, map[target-nums[i]] ];
-        else map[nums[i]] = i
+        if( obj[target-nums[i]]!==undefined ) return [obj[target-nums[i]], i];
+        else obj[nums[i]] = i
     }
 };
