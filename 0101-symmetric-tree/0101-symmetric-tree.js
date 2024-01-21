@@ -11,10 +11,10 @@
  * @return {boolean}
  */
 var isSymmetric = function(root) {
-    function checkSymmetry(cN1, cN2){
-        if(!cN1 && !cN2) return true
-        if(!cN1 || !cN2) return false
-        return cN1.val==cN2.val && checkSymmetry(cN1.left, cN2.right) && checkSymmetry(cN1.right, cN2.left)
+    function bt(left,right){
+        if((!left && !right)) return true;
+        if((!left || !right)) return false;
+        return left.val===right.val && bt(left.left, right.right) && bt(left.right, right.left)
     }
-    return checkSymmetry(root.left, root.right)
+    return bt(root.left, root.right)
 };
