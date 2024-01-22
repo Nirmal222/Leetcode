@@ -4,14 +4,15 @@
  */
 var generate = function(numRows) {
     let output = [[1]];
-    for (let i = 0; i < numRows - 1; i++) {
-        let x = output[output.length - 1];
-        let row = [1];
-        for (let j = 1; j < x.length; j++) {
-            row.push(x[j]+x[j-1])
+    for(let i=1;i<numRows;i++){
+        let row = [];
+        row.push(1)
+        let pre = output[output.length-1];
+        for(let j = 1;j<pre.length;j++){
+            row.push(pre[j]+pre[j-1])
         }
-        row.push(1);
-        output.push(row);
+        row.push(1)
+        output.push(row)
     }
-    return output;
+    return output
 };
