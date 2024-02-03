@@ -3,13 +3,13 @@
  * @return {number}
  */
 var firstUniqChar = function(s) {
-    let hashMap = {};
+    let map = {};
     for(let i=0;i<s.length;i++){
-        if(!hashMap[s[i]]) hashMap[s[i]] = 1;
-        else hashMap[s[i]]++;
+        if(!map[s[i]]) map[s[i]] = 1;
+        else map[s[i]]++;
     }
     for(let i=0;i<s.length;i++){
-        if(hashMap[s[i]]==1) return i
+        if(map[s[i]]===1) return i
     }
-    return -1;
+    return -1
 };
